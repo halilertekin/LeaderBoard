@@ -45,6 +45,10 @@ if (Meteor.isClient) {
           score: -5
         }
       });
+    },
+    'click .remove': function() {
+      var selectedPlayer = Session.get('selectedPlayer');
+      PlayersList.remove(selectedPlayer);
     }
   });
   Template.addPlayerForm.events({
@@ -58,7 +62,6 @@ if (Meteor.isClient) {
     },
     'click a': function(event) {
       event.preventDefault();
-
     }
   });
 
